@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 65%;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .container-login{
+    border: 2px solid #000;
+    width: 60em;
+    height: 45em;
+    background: gainsboro;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.container .container-login{
+    padding: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.user{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+
+}
+
+.password{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+
+}
+
+.user input{
+    margin-bottom: 2em;
+    margin-top: 0.2em;
+    width: 10em;
+    height: 3em;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.password input{
+    margin-bottom: 2em;
+    margin-top: 0.2em;
+    width: 10em;
+    height: 3em;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.user label{
+    font-size: 15px;
+}
+
+.password label{
+    font-size: 15px;
+}
+
+.container-login .btn-entrar{
+    border: 2px solid red;
+    background: red;
+
+}

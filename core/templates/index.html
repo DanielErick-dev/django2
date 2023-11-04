@@ -1,0 +1,30 @@
+
+{% load static %}
+<! DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Página Inicial</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <div class="header">
+        <ul class="list-menu">
+            <li>
+                <a href="{% url 'core:contato' %}">Contato</a>
+            </li>
+            <li>
+                <a href="{% url 'core:produto' %}">Produto</a>
+            </li>
+            <li>
+                <a href="{% url 'core:produtos_salvos' %}">Produtos salvos</a>
+            </li>
+            <li>
+                <a href="{% url 'core:login' %}">Login</a>
+            </li>
+        </ul>
+    </div>
+
+</body>
+</html>
