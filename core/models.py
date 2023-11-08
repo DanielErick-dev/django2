@@ -1,7 +1,6 @@
 from django.db import models
 from stdimage.models import StdImageField
 from django.utils import timezone
-
 from django.db.models import signals
 from django.template.defaultfilters import slugify
 
@@ -27,3 +26,13 @@ def produto_pre_save(signal, instance, sender, **kwargs):
     instance.slug = slugify(instance.nome)
 
 signals.pre_save.connect(produto_pre_save, sender=Produto)
+
+
+class Login(models.Model):
+    usuario=models.CharField('usuario',max_length=15)
+    senha=models.CharField('senha',max_length=10)
+    def __str__(self):
+        return self.usuario
+        
+
+    

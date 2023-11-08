@@ -6,22 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/login.css' %}">
     <title>Login</title>
+    
+    
 </head>
 <body>
     <section class="container">
         <div class="container-login">
-            <div>
-                <div class="user">
-                    <label for="user">usuário: </label>
-                    <input type="text" placeholder="Digite seu usuário" name="user" autocomplete="off"/>
-                </div>
-                <div class="password">
-                    <label for="password">Senha</label>
-                    <input type="text" placeholder="Digite sua senha" name="password" autocomplete="off"/>
-                </div>
-                <div class="btn-entrar">
-                    <input type="submit" placeholder="Entrar">
-                </div>
+            <div class="form-caixa">
+                <form method="post" action="{% url 'core:login' %}" autocomplete="off">
+                    {% csrf_token %} 
+                    {{ form }}
+                    <button type="submit">Entrar Com Usuário E Senha</button>
+                    <a href="{% url 'core:criar_conta' %}" target="_blank">Criar Conta</a>
+                </form>
             </div>
         </div>
     </section>
