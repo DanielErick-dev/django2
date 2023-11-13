@@ -30,7 +30,9 @@ signals.pre_save.connect(produto_pre_save, sender=Produto)
 
 class Login(models.Model):
     usuario=models.CharField('usuario',max_length=15)
+    email = models.EmailField('e-mail', max_length=20, default='')
     senha=models.CharField('senha',max_length=10)
+    confirmacao_senha = models.CharField('confirmacao de senha', max_length=10, default='')
     def __str__(self):
         return self.usuario
         

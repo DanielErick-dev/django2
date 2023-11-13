@@ -33,4 +33,4 @@ class ProdutoModelForm(forms.ModelForm):
 class LoginModelForm(forms.ModelForm):
     class Meta:
         model = Login
-        fields=['usuario', 'senha']
+        fields=['usuario', 'email', 'senha', 'confirmacao_senha']

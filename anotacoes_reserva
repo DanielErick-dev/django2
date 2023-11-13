@@ -1,0 +1,16 @@
+<!-- <div class="input-grupo">
+    <i class="fa fa-user"></i>
+    <input type="text" placeholder="nome completo" name="nome_completo" value="">
+</div>
+<div class="input-grupo">
+    <i class="fa fa-envelope"></i>
+    <input type="email" placeholder="e-mail" name="email" value="">
+</div>
+<div class="input-grupo">
+    <i class="fa fa-lock"></i>
+    <input type="password" placeholder="senha" name="senha" value="">
+</div>
+<div class="input-grupo">
+    <i class="fa fa-lock"></i>
+    <input type="password" placeholder="confirmar senha" name="confirmar_senha" value="">
+</div> -->

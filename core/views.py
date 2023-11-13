@@ -55,38 +55,28 @@ def produtos_salvos(request):
     return render(request, 'produtos_cadastrados.html', context)
 
 
+# def criar_conta(request):
+#     lista_de_usuarios = Login.objects.all()
+#     form=LoginModelForm()
+#     if str(request.method) == 'POST':
+#         form=LoginModelForm(request.POST)
+#         if form.is_valid():
+#             usuario=form.cleaned_data['usuario']
+#             senha=form.cleaned_data['senha']
+#             for usuario_da_lista in lista_de_usuarios:
+#                 if usuario == usuario_da_lista.usuario:
+#                     if senha == usuario_da_lista.senha:
+#                         print(f'seja bem vindo {usuario}')
+#                         break
+#             else:
+#                 print('você não é bem vindo ou não criou sua conta ainda')                   
+#             form=LoginModelForm()
+    
+#     context={'form':form}
+#     return render(request,'login.html',context)
 def login(request):
-    lista_de_usuarios = Login.objects.all()
-    form=LoginModelForm()
-    if str(request.method) == 'POST':
-        form=LoginModelForm(request.POST)
-        if form.is_valid():
-            usuario=form.cleaned_data['usuario']
-            senha=form.cleaned_data['senha']
-            for usuario_da_lista in lista_de_usuarios:
-                if usuario == usuario_da_lista.usuario:
-                    if senha == usuario_da_lista.senha:
-                        print(f'seja bem vindo {usuario}')
-                        break
-            else:
-                print('você não é bem vindo ou não criou sua conta ainda')                   
-            form=LoginModelForm()
+    form_login = LoginModelForm()
+    context = {'form': form_login}
+    return render(request, 'login.html', context)
     
-    context={'form':form}
-    return render(request,'login.html',context)
-def criar_conta(request):
-    form=LoginModelForm()
-    if str(request.method) == 'POST':
-        form=LoginModelForm(request.POST)
-        if form.is_valid():
-            usuario=form.cleaned_data['usuario']
-            senha=form.cleaned_data['senha']
-            try:
-                print(f'usuario:{usuario}\nsenha:{senha}')
-                form.save()
-            except:  
-                print(f'ocorreu um erro')         
-            form=LoginModelForm()
     
-    context={'form':form}
-    return render(request,'criar_conta.html',context)

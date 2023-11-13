@@ -4,23 +4,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}" type="text/css" media="screen">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
     <title>Login</title>
-    
-    
 </head>
 <body>
-    <section class="container">
-        <div class="container-login">
-            <div class="form-caixa">
-                <form method="post" action="{% url 'core:login' %}" autocomplete="off">
-                    {% csrf_token %} 
-                    {{ form }}
-                    <button type="submit">Entrar Com Usuário E Senha</button>
-                    <a href="{% url 'core:criar_conta' %}" target="_blank">Criar Conta</a>
-                </form>
+    <div class="container" id="container">
+        <div class="linha">
+               <div class="col alinhar-itens-centro flex-col inscrever">
+                    <div class="form-caixa alinhar-itens-centro">
+                        <div class="form inscrever">
+                            <form method="post" action="{% url 'core:login' %}" class="form-group">
+                                {% csrf_token %}
+                                
+                                {{ form.as_p }}
+                                <button type="submit">Criar Conta</button>
+                            </form>
+                            <p>
+                                <span>Já tem conta?</span>
+                                <b onclick="toglle();" class="pointer">Entre Aqui</b>
+                            </p>
+                            
+
+                        </div>
+                    </div>
+               </div>
+
+               <!-- formulário de logar    -->
+                <div class="col alinhar-itens-centro flex-col entrar">
+                    <div class="form-caixa alinhar-itens-centro">
+                        <div class="form entrar">
+                            <div class="input-grupo">
+                                <i class="fa fa-user"></i>
+                                <input type="text" placeholder="Usuário" name="usuario_entrar" value="">
+                            </div>
+                            <div class="input-grupo">
+                                <i class="fa fa-lock"></i>
+                                <input type="password" placeholder="Senha" name="senha_entrar" value="">
+                            </div>
+                            <button>Entrar</button>
+                            <p>
+                                <span>nao tem conta?</span>
+                                <b onclick="toglle();" class="pointer">clique Aqui</b>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+        <div class="linha conteudo-linha">
+            <div class="col alinhar-itens-centro flex-col entrar">
+                <div class="texto entrar">
+                    <h2>Bem Vindo</h2>
+                </div>
+                <div class="img entrar">
+                    <img src="{% static 'images/login.png' %}" alt="imagem de login">
+                </div>
+            </div>
+            <div class="col alinhar-itens-centro flex-col entrar">
+                <div class="texto inscrever">
+                    <h2>Bem Vindo</h2>
+                </div>
+                <div class="img inscrever">
+                    <img src="{% static 'images/criarconta.png' %}" alt="imagem de login">
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+    <script src="{% static 'js/script.js' %}"></script>       
 </body>
 </html>
+
+
+
+    
